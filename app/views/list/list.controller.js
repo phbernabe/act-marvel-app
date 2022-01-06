@@ -1,4 +1,4 @@
-﻿app.controller('app.act.marvel.list', function (PaginationService, marvel) {
+﻿app.controller('app.act.marvel.list', function ($location, PaginationService, marvel) {
     var vm = this;
 
     vm.pager = {};
@@ -12,11 +12,18 @@
         'name': ''
     };
 
-    vm.find = function () {
-        console.log('find');
+    var init = function () {
+        let params = $location.search();
+        let q = params.q;
+        let page = params.page || 1;
+
+        if (q != null && q != undefined) {
+            vm.input.name = q;
+            getCharacters(page);
+        }
     };
 
-    vm.search = function (page) {
+    var getCharacters = function (page) {
         page = page || 1;
 
         if (!vm.loading) {
@@ -40,4 +47,16 @@
                 });
         }
     };
+
+    vm.search = function (page) {
+
+        let queryString = {
+            'q': vm.input.name,
+            'page': page
+        };
+
+        $location.path('/').search(queryString);
+    }
+
+    init();
 });
