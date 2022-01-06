@@ -1,5 +1,5 @@
 ﻿<div class="row" ng-controller="app.act.marvel.list as vm">
-    <div class="col-12">
+    <div class="col-12 pb-4">
 
         <div class="row">
             <div class="col-md-6 offset-md-3">
@@ -18,7 +18,7 @@
             </div>
         </div>
 
-        <ui-pagination></ui-pagination>
+        <ui-pagination pager="vm.pager" search="vm.search"></ui-pagination>
 
         <div class="row">
             <div class="col-md-10 offset-md-1">
@@ -53,7 +53,7 @@
 
         </div>
 
-        <ui-pagination class="mb-4"></ui-pagination>
+        <ui-pagination pager="vm.pager" search="vm.search"></ui-pagination>
 
     </div>
 </div>

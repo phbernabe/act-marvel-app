@@ -19,7 +19,6 @@
                 .then(function (response) {
                     vm.character = response.data.data.results[0];
                     vm.wiki = vm.character.urls.find(x => x.type === 'wiki');
-                    console.log(vm.character);
                 })
                 .finally(function () {
                     vm.loading = false;

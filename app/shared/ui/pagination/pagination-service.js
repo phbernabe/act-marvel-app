@@ -1,4 +1,4 @@
-﻿angular.module('marvel-app').service('PaginationService', function () {
+﻿angular.module('ui-utils').service('PaginationService', function () {
 
     this.getPager = function (param) {
         var totalItems = (param.totalItems === undefined || param.totalItems === null) ? Number.MAX_SAFE_INTEGER : param.totalItems;
