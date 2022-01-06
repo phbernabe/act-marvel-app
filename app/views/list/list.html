@@ -1,0 +1,59 @@
+﻿<div class="row" ng-controller="app.act.marvel.list as vm">
+    <div class="col-12">
+
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+
+                <div class="row">
+                    <div class="col-md-9 col-sm-12 mt-3">
+                        <input type="text" class="form-control" placeholder="Digite o nome do personagem"
+                            ng-model="vm.input.name" enter-key="vm.search()" ng-disabled="vm.loading" autofocus />
+                    </div>
+
+                    <div class="col-md-3 col-sm-12 mt-3">
+                        <button ng-click="vm.search()" class="btn btn-primary w-100"
+                            ng-disabled="vm.loading">Procurar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <ui-pagination></ui-pagination>
+
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+
+                <div class="row mt-3" ng-if="vm.submitted">
+                    <div class="col-12 text-center gy-4" ng-if="vm.characters.length == 0">
+                        <p class="fw-light">Nenhum personagem encontrado.</p>
+                    </div>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-4">
+
+                    <div class="col gy-4" ng-repeat="char in vm.characters">
+
+                        <div class="card">
+                            <img ng-src="{{char.thumbnail.path + '.' + char.thumbnail.extension}}" class="card-img-top"
+                                alt="Imagem">
+
+                            <div class="card-body">
+                                <h5 class="card-title">{{char.name}}</h5>
+                                <p class="card-text">{{char.description}}</p>
+                                <a href="#!details/{{char.id}}" class="btn btn-primary">+
+                                    Detalhes</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <ui-pagination class="mb-4"></ui-pagination>
+
+    </div>
+</div>

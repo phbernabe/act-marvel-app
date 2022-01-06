@@ -1,0 +1,51 @@
+﻿<div class="row" ng-controller="app.act.marvel.details as vm">
+    <div class="col-12">
+
+        <div class="row">
+            <div class="col-md-10 offset-md-1 mt-3">
+
+                <div class="row">
+                    <div class="col-12">
+                        <button class="btn btn-primary" ng-click="vm.goBack()">Voltar</button>
+                    </div>
+                </div>
+
+                <div class="row mt-4 mb-4">
+
+                    <div class="col-md-3 mb-3">
+                        <img ng-src="{{vm.character.thumbnail.path + '.' + vm.character.thumbnail.extension}}"
+                            class="card-img-top" alt="Imagem">
+
+                        <div class="text-center mt-3" ng-if="vm.wiki">
+                            <a href="{{vm.wiki.url}}" target="_blank" rel="external">Wiki</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-9">
+                        <h2 id=character-header-name>{{vm.character.name}}</h2>
+
+                        <small class="fw-lighter badge bg-secondary">
+                            Última alteração: {{vm.character.modified | date: 'dd/MM/yyyy'}}
+                        </small>
+
+                        <p>{{vm.character.description}}</p>
+
+                        <div ng-if="vm.character.comics.items.length">
+                            <strong>Aparições:</strong>
+                            <ul class="comics-list">
+                                <li ng-repeat="comic in vm.character.comics.items">
+                                    {{comic.name}}
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="text-center mt-4 d-sm-none">
+                            <button class="btn btn-dark" ng-click="vm.scrollTop()">&#8679; Topo</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

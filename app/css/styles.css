@@ -1,0 +1,18 @@
+﻿ul.pagination li.page-item {
+    cursor: pointer;
+}
+
+ul.pagination li.page-item.disabled {
+    cursor: not-allowed;
+}
+
+ul.comics-list {
+    list-style-type: decimal-leading-zero;
+    margin-top: 8px;
+    margin-left: 12px;
+}
+
+#character-header-name {
+    display: inline;
+    padding-right: 8px;
+}
