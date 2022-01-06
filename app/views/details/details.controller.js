@@ -7,10 +7,10 @@
     vm.loading = false;
 
     var init = function () {
-        retrieve($routeParams.id);
+        getCharacter($routeParams.id);
     }
 
-    var retrieve = function (id) {
+    var getCharacter = function (id) {
         if (!vm.loading) {
 
             vm.loading = true;
