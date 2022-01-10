@@ -1,0 +1,11 @@
+{
+    "name": "act-marvel-app",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "http-server": "^13.1.0"
+    },
+    "scripts": {
+        "start": "npx http-server -o index.html"
+    }
+}
